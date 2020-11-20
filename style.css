@@ -2,6 +2,9 @@ body {
     margin: 0;
     background-color: #1B3659;
 }
+.create-header {
+    font-size: 20px;
+}
 .container {
     width: auto;
     margin: 0;
@@ -51,14 +54,21 @@ body {
     margin: 20px;
     border-radius: 20px;
     box-shadow: 2px 2px 5px #444444;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "text   image";
+
 
 }
-.blog-input, .name-input, .post-button{
+.blog-input, .name-input, .post-button, .image-input {
     margin: 10px;
     border: none;
     border-radius: 10px;
+    grid-area: text;
 }
-.name-input {
+.name-input, .image-input {
     color: black;
 }
 .post-button {
@@ -85,7 +95,7 @@ body {
     background-color: #9794F2;
     padding-left: 40px;
 }
-.message-box {
+.message-text-box {
     padding: 10px;
     border-bottom: 2px solid #444444;
     
