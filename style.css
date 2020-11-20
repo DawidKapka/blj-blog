@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    background-color: #1B3659;
+}
+.container {
+    width: auto;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    grid-template-rows: 40px 80px auto 60px;
+    grid-template-areas:
+      "header   header   header"
+      "nav      nav      nav"
+      "subnav   content  ads"
+      "footer   footer   footer";
+}
+.navbar, .header {
+    grid-area: nav;
+    display: flex;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #9794F2;
+    position: sticky;
+    top: 0px;   
+}
+.navbar {
+    box-shadow: 5px 5px 5px black;
+}
+
+.content {
+    background-color: #737EBF;
+    grid-area: content;
+    border-radius: 20px;
+}
+.main-box {
+    color: #8ecbe0;
+    background-color:  #737EBF;
+    border: 5px solid #737EBF;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #444444;
+    
+    
+}
+.main {
+    padding-top: 20px;
+}
+.add-box, .blog-box {
+    padding: 20px;
+    background-color: #9794F2;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px #444444;
+
+}
+.blog-input, .name-input, .post-button{
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+.name-input {
+    color: black;
+}
+.post-button {
+    padding: 5px 10px;
+    box-shadow: #1B3659;
+}
+.message {
+    color: black;
+    padding-left: 20px;
+}
+.message-name {
+    color: black;
+    font-weight: bold;
+}
+.error-box {
+    color: red;
+    background-color: rgb(250, 220, 220);
+    border: 1px solid red;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+.comment-input {
+    border: none;
+    background-color: #9794F2;
+    padding-left: 40px;
+}
+.message-box {
+    padding: 10px;
+    border-bottom: 2px solid #444444;
+    
+}
+.date {
+    font-size: 12px;
+    color: #444444;
+}
