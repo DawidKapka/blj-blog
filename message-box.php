@@ -13,7 +13,7 @@
             <p class="message-name"><?= htmlspecialchars($name) ?></p>
             <p class="date"><?= htmlspecialchars($date)?></p>
             <p class="message"><?= htmlspecialchars($message) ?></p>
-            <img src="<?= $image?>" alt="<?= $image?>">
+            <img src="<?= htmlspecialchars($url)?>" alt="<?= htmlspecialchars($url)?>">
             
             <div class="add-comment">
                 <input type="text" name="comment" class="comment-input" placeholder="Add Comment..."><br>

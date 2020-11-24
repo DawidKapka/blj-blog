@@ -39,6 +39,7 @@
                                 $name = $statement[1];
                                 $date = $statement[2];
                                 $message = $statement[3];
+                                $url = $statement[4];
                                 include("message-box.php");
                                 
                             }

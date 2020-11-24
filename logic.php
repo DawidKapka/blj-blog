@@ -11,8 +11,6 @@ if (isNameCorrect($name) === true && isMessageCorrect($message) === true) {
     $pdo->query("INSERT INTO posts (created_by, created_at, post_message, image_url) VALUES ('$name', '$date', '$message', '$image')");
 }
 
-
-
 $statements = $pdo->query('SELECT * FROM `posts` ORDER BY `created_at` DESC');
 
 

@@ -12,8 +12,9 @@
             <p>Blog</p>
         </header>
         <nav class="navbar">
-            <p>About</p>
-            <p>Blog</p>
+            <a class="nav-text" href="other-blogs.php">Other Blogs</a>
+            <a class="nav-text">About</a>
+            <a class="nav-text">Blog</a>
         </nav>
     </div>
 
