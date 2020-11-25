@@ -32,7 +32,7 @@
                                 <label for="img" class="image-input">Image: </label>
                                 <input type="text" name="img" class="image-input" placeholder="Paste URL here..."><br>
                             </div>
-                            <input type="submit" value="Abschicken" class="post-button" name="submit-box">
+                            <input type="submit" value="Send" class="post-button" name="submit-box">
                             </div>
 
                             <div class="message-box">
@@ -50,14 +50,14 @@
                             <?php 
 
                             if (isset($_POST["submit-box"])) {
-                                if (isNameCorrect($name) === false && isMessageCorrect($message) === false) { 
+                                if (isNameCorrect($name) === false || isMessageCorrect($message) === false) { 
                                     echo '<div class=error-box><ul>';
                                 
                                     if (isNameCorrect($name) === false) {
-                                        echo '<li>Geben sie einen gültigen Namen ein!</li>';
+                                        echo '<li class="error">Geben sie einen gültigen Namen ein!</li>';
                                     }
                                     if (isMessageCorrect($message) === false) {
-                                        echo '<li>Die Nachricht kann nicht leer sein!</li>';
+                                        echo '<li class="error">Die Nachricht kann nicht leer sein!</li>';
                                     }
                                     echo '</ul></div>';
                                 }

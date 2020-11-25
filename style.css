@@ -1,5 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 body {
     margin: 0;
@@ -28,22 +29,28 @@ body {
     justify-content: space-around;
     position: sticky;
     top: 0;
+    background-color: #26140D;
+    background-image: url("img/background.jpg");
+    background-blend-mode: darken;
+
 }
 .navbar {
     box-shadow: 5px 5px 5px black; 
 }
 
 .content {
-    background-color: #737EBF;
+    background-color: #444444;
     grid-area: content;
     border-radius: 20px;
 }
 .main-box {
     color: black;
-    background-color:  #737EBF;
-    border: 5px solid #737EBF;
+    background-color:  #26140D;
+    background-image: url("img/background.jpg");
+    background-blend-mode: darken;
+    border: 5px solid #26140D;
     border-radius: 20px;
-    box-shadow: 2px 2px 5px #444444;
+    box-shadow: 2px 2px 5px #26140D;
     
     
 }
@@ -52,10 +59,10 @@ body {
 }
 .add-box, .blog-box {
     padding: 20px;
-    background-color: #9794F2;
+    background-color: #D9A689;
     margin: 20px;
     border-radius: 20px;
-    box-shadow: 2px 2px 5px #444444;
+    box-shadow: 2px 2px 5px black;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
@@ -69,6 +76,7 @@ body {
     border: none;
     border-radius: 10px;
     grid-area: text;
+    color: black;
 }
 .name-input, .image-input {
     color: black;
@@ -86,7 +94,6 @@ body {
     font-weight: bold;
 }
 .error-box {
-    color: red;
     background-color: rgb(250, 220, 220);
     border: 1px solid red;
     border-radius: 10px;
@@ -94,7 +101,7 @@ body {
 }
 .comment-input {
     border: none;
-    background-color: #9794F2;
+    background-color: #D9A689;
     padding-left: 40px;
 }
 .comment-input:focus {
@@ -116,8 +123,7 @@ body {
 .nav-text {
     text-decoration: none;
     color: black;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
+
     margin-bottom: 10px;
 }
 ::placeholder {
@@ -125,4 +131,18 @@ body {
 }
 .nav-border {
     margin: 5px 40px;
+}
+.nav-text:hover {
+    transition: 200ms;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+} 
+.error {
+    color: red;
+}
+.small-button {
+    size: 50%px;
+}
+.link {
+    color: black;
 }

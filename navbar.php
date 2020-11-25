@@ -11,7 +11,7 @@
 <body>
     <div class="top-container">
         <header class="header">
-            <p>Blog</p>
+            <p>BLJ-Blog</p>
         </header>
         <nav class="navbar">
             <a class="nav-text" href="about.php"><p class="nav-border">About</p></a>

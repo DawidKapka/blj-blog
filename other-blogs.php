@@ -1,3 +1,7 @@
+<?php 
+    include("validation.php");
+    include("logic.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +21,20 @@
             <div class="content">
                 <div class="main-box">
                     <div class="add-box">
-                        <p class="header-text">Other Blogs: </p>  
+                        <p class="header-text">Other Blogs: </p> 
+                        <div class="links">
+                            <?php
+                                foreach($sqlQuerry->fetchAll() as $url_statement) 
+                                $author = $url_statement[1];
+                                $url = $url_statement[2];
+                                echo '<div class="link">';
+                                echo $author . ":  ";
+                                echo "<a href=$url>";
+                                    echo $url;
+                                echo "</a>";
+                                echo '</div>';
+                            ?>
+                        </div> 
                     </div>
                 
                 </div>
