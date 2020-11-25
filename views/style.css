@@ -5,7 +5,7 @@
 body {
     margin: 0;
     background-color: #1B3659;
-    background-image: url("img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-attachment: fixed;
     
 }
@@ -14,15 +14,15 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 200px auto 200px;
-    grid-template-rows: 40px 80px auto 60px;
+    grid-template-rows: 120px auto 60px;
     grid-template-areas:
-      "header   header   header"
-      "nav      nav      nav"
-      "subnav   content  ads"
+      "nav   nav      nav"
+      "subnav  content  content"
       "footer   footer   footer";
 }
-.navbar, .header {
+.navbar, .nav-part {
     grid-area: nav;
+    box-shadow: 5px 5px 5px black; 
     display: flex;
     flex-basis: auto;
     flex-wrap: wrap;
@@ -30,14 +30,10 @@ body {
     position: sticky;
     top: 0;
     background-color: #26140D;
-    background-image: url("img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-blend-mode: darken;
 
 }
-.navbar {
-    box-shadow: 5px 5px 5px black; 
-}
-
 .content {
     background-color: #444444;
     grid-area: content;
@@ -46,10 +42,10 @@ body {
 .main-box {
     color: black;
     background-color:  #26140D;
-    background-image: url("img/background.jpg");
+    background-image: url("../img/background.jpg");
     background-blend-mode: darken;
     border: 5px solid #26140D;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 2px 2px 5px #26140D;
     
     
@@ -61,7 +57,7 @@ body {
     padding: 20px;
     background-color: #D9A689;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 2px 2px 5px black;
     display: grid;
     grid-template-columns: auto auto;
@@ -123,8 +119,7 @@ body {
 .nav-text {
     text-decoration: none;
     color: black;
-
-    margin-bottom: 10px;
+    margin: 20px 0;
 }
 ::placeholder {
     color: #444444;
@@ -145,4 +140,11 @@ body {
 }
 .link {
     color: black;
+    margin: 20px 0;
+}
+.nav-header {
+    margin: auto 0;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
 }

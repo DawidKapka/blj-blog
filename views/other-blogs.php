@@ -1,6 +1,6 @@
 <?php 
-    include("validation.php");
-    include("logic.php");
+    include("../logic/validation.php");
+    include("../logic/logic.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,19 +24,19 @@
                         <p class="header-text">Other Blogs: </p> 
                         <div class="links">
                             <?php
-                                foreach($sqlQuerry->fetchAll() as $url_statement) 
-                                $author = $url_statement[1];
-                                $url = $url_statement[2];
-                                echo '<div class="link">';
-                                echo $author . ":  ";
-                                echo "<a href=$url>";
-                                    echo $url;
-                                echo "</a>";
-                                echo '</div>';
+                                foreach($sqlQuerry->fetchAll() as $url_statement) {
+                                    $author = $url_statement[1];
+                                    $url = $url_statement[2];
+                                    echo '<div class="link">';
+                                    echo $author . ":  ";
+                                    echo "<a href=$url>";
+                                        echo $url;
+                                    echo "</a>";
+                                    echo '</div>';
+                                }
                             ?>
                         </div> 
                     </div>
-                
                 </div>
             </div>
         </main>

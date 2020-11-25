@@ -1,6 +1,6 @@
 <?php 
-    include("validation.php");
-    include("logic.php");
+    include("../logic/validation.php");
+    include("../logic/logic.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

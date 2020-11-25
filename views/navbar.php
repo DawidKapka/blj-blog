@@ -10,13 +10,11 @@
 </head>
 <body>
     <div class="top-container">
-        <header class="header">
-            <p>BLJ-Blog</p>
-        </header>
         <nav class="navbar">
+            <a href="index.php" class="nav-header" >BLJ-Blog</a>
             <a class="nav-text" href="about.php"><p class="nav-border">About</p></a>
             <a class="nav-text" href="index.php"><p class="nav-border">Blog</p></a>
-            <a class="nav-text" href="other-blogs.php"><p class="nav-border">Other Blogs</p></a>
+            <a class="nav-text" href="other-blogs.php"><p class="nav-border">Other Blogs</p></a>            
             
             
         </nav>
