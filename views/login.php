@@ -1,3 +1,10 @@
+<?php 
+    include("../logic/validation.php");
+    include("../logic/comment-validation.php");
+    include("../logic/registration-validation.php");
+    include("../logic/logic.php");
+    include("errors.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +28,18 @@
                             <label for="name" class="name-input">Username:</label>
                             <input type="text" name="name" class="name-input"><br>
                             <label for="name" class="name-input">Password:</label>
-                            <input type="password" name="name" class="name-input"><br>
+                            <input type="password" name="password" class="name-input"><br>
 
-                            <input type="submit" value="Login" class="post-button" name="submit-box">
+                            <input type="submit" value="Login" class="post-button" name="login-box">
 
                             <p class="date">No Account yet? <a href="register.php"> Register</a></a></p>
+
+                            <?php
+                                if(isset($_POST["login-box"])) {
+                                    $name = $_POST["name"] ?? '';
+                                    $password = $_POST["password"] ?? '';
+                                } 
+                            ?>
                         </form>
                     </div>
                 </div>

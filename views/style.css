@@ -42,8 +42,6 @@ body {
 .main-box {
     color: black;
     background-color:  #26140D;
-    background-image: url("../img/background.jpg");
-    background-blend-mode: darken;
     border: 5px solid #26140D;
     border-radius: 10px;
     box-shadow: 2px 2px 5px #26140D;
@@ -147,4 +145,11 @@ body {
     font-size: 30px;
     text-decoration: none;
     font-weight: bold;
+}
+.icon {
+    margin-top: 0px;
+    margin-left: 8px;
+}
+.login-text {
+    font-style: italic;
 }

@@ -39,11 +39,14 @@ function validateRegister($name, $email, $password, $password_repeat) {
         if (isPasswordCorrect($password) === false) {
             echo '<li class="error">Enter a valid Password! (min. 8 characters)</li>';
         }
-        if (isRepeatedPasswordCorrect($password, $password_repeat) !== false) {
+        if (isRepeatedPasswordCorrect($password, $password_repeat) === false) {
             echo '<li class="error">Passwords do not match!</li>';
         }
         echo '</ul></div>';
-    } 
+    } else {
+        echo '<p class="success">Registration successful!</p>';
+    }
 }
+function validateLogin($name, $password) {}
 
 ?>

@@ -35,12 +35,12 @@
                             <input type="password" name="password-repeat" class="name-input"><br>
 
 
-                            <input type="submit" value="Register" class="post-button" name="submit-box">
+                            <input type="submit" value="Register" class="post-button" name="register-box">
 
                             <p class="date">Already have an Account? <a href="login.php">Login</a></a></p>
 
                             <?php
-                                if (isset($_POST["submit-box"])) {
+                                if (isset($_POST["register-box"])) {
                                     validateRegister($name, $email, $password, $password_repeat);
                                 }
                             ?>

@@ -1,7 +1,9 @@
 <?php 
+    session_start();
     include("../logic/validation.php");
     include("errors.php");
     include("../logic/comment-validation.php");
+    include("../logic/registration-validation.php");
     include("../logic/logic.php");
 
 ?>
@@ -22,7 +24,7 @@
                 <div class="main-box">
                     <div class="add-box">
                         <form action="index.php" method="post">
-                            <p class="header-text">Create Post: </p>
+                            <p class="header-text"><img src="../img/create-icon.png" alt="" class="icon"> Create Post:</p>
                             <label for="name" class="name-input">Name:</label>
                             <input type="text" name="name" class="name-input" value="<?= $name?>"><br>
 
@@ -32,10 +34,10 @@
                                 <label for="img" class="image-input">Image: </label>
                                 <input type="text" name="img" class="image-input" placeholder="Paste URL here..."><br>
                             </div>
-                            <input type="submit" value="Send" class="post-button" name="submit-box">
+                            <input type="submit" value="Send" class="post-button" name="login-box">
                             </div>
                             <?php 
-                            if (isset($_POST["submit-box"])) {
+                            if (isset($_POST["login-box"])) {
                                 validateInput($name, $message);
                             }
                             ?>

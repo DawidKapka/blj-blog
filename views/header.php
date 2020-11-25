@@ -14,7 +14,7 @@
             <a class="nav-text" href="about.php"><p class="nav-border">About</p></a>
             <a class="nav-text" href="index.php"><p class="nav-border">Blog</p></a>
             <a class="nav-text" href="other-blogs.php"><p class="nav-border">Other Blogs</p></a>     
-            <a class="nav-text" href="login.php"><p class="nav-border">Login/Register</p></a>                   
+            <a class="nav-text" href="login.php"><p class="nav-border login-text">Login/Register<img src="../img/login-icon.png" alt="login icon" class="icon"></p></a>             
         </nav>
 
 

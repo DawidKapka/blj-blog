@@ -1,6 +1,10 @@
 <?php 
     include("../logic/validation.php");
+    include("errors.php");
+    include("../logic/comment-validation.php");
+    include("../logic/registration-validation.php");
     include("../logic/logic.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
