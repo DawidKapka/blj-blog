@@ -20,18 +20,18 @@ body {
       "subnav  content  content"
       "footer   footer   footer";
 }
-.navbar, .nav-part {
+.navbar {
     grid-area: nav;
     box-shadow: 5px 5px 5px black; 
     display: flex;
     flex-basis: auto;
     flex-wrap: wrap;
     justify-content: space-around;
-    position: sticky;
-    top: 0;
     background-color: #26140D;
     background-image: url("../img/background.jpg");
     background-blend-mode: darken;
+    position: sticky;
+    top: 0;
 
 }
 .content {

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include("navbar.php");?>
+    <?php include("header.php");?>
     <div class="container">
         <div class="subnav">
         </div>
@@ -27,12 +27,11 @@
                                 foreach($sqlQuerry->fetchAll() as $url_statement) {
                                     $author = $url_statement[1];
                                     $url = $url_statement[2];
-                                    echo '<div class="link">';
-                                    echo $author . ":  ";
-                                    echo "<a href=$url>";
-                                        echo $url;
-                                    echo "</a>";
-                                    echo '</div>';
+                                    echo '<div class="link"><ul>';
+                                    echo "<li><a href=$url>";
+                                        echo $author;
+                                    echo "</a></li>";
+                                    echo '</ul></div>';
                                 }
                             ?>
                         </div> 

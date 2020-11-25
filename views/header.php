@@ -9,16 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="top-container">
         <nav class="navbar">
             <a href="index.php" class="nav-header" >BLJ-Blog</a>
             <a class="nav-text" href="about.php"><p class="nav-border">About</p></a>
             <a class="nav-text" href="index.php"><p class="nav-border">Blog</p></a>
-            <a class="nav-text" href="other-blogs.php"><p class="nav-border">Other Blogs</p></a>            
-            
-            
+            <a class="nav-text" href="other-blogs.php"><p class="nav-border">Other Blogs</p></a>     
+            <a class="nav-text" href="login.php"><p class="nav-border">Login/Register</p></a>                   
         </nav>
-    </div>
 
 
 

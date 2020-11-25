@@ -1,19 +1,19 @@
 <?php 
     include("../logic/validation.php");
+    include("errors.php");
+    include("../logic/comment-validation.php");
     include("../logic/logic.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Blog</title>
 </head>
 <body>
-    <?php include("navbar.php");?>
+    <?php include("header.php");?>
     <div class="container">
         <div class="subnav">
         </div>
@@ -34,10 +34,15 @@
                             </div>
                             <input type="submit" value="Send" class="post-button" name="submit-box">
                             </div>
-
+                            <?php 
+                            if (isset($_POST["submit-box"])) {
+                                validateInput($name, $message);
+                            }
+                            ?>
                             <div class="message-box">
                                 <?php
                                 foreach($statements->fetchAll() as $statement) {
+                                    $id = $statement[0];
                                     $name = $statement[1];
                                     $date = $statement[2];
                                     $message = $statement[3];
@@ -47,23 +52,6 @@
                                 }
                                 ?>
                             </div>
-                            <?php 
-
-                            if (isset($_POST["submit-box"])) {
-                                if (isNameCorrect($name) === false || isMessageCorrect($message) === false) { 
-                                    echo '<div class=error-box><ul>';
-                                
-                                    if (isNameCorrect($name) === false) {
-                                        echo '<li class="error">Geben sie einen gültigen Namen ein!</li>';
-                                    }
-                                    if (isMessageCorrect($message) === false) {
-                                        echo '<li class="error">Die Nachricht kann nicht leer sein!</li>';
-                                    }
-                                    echo '</ul></div>';
-                                }
-                                
-                            }
-                            ?>
                         
                         </form>
                     </div>
