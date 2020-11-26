@@ -20,16 +20,6 @@ if (isNameCorrect($name) === true && isMessageCorrect($message) === true) {
 
 //load all posts
 $statements = $pdo->query('SELECT * FROM `posts` ORDER BY `created_at` DESC');
-foreach ($statements->fetchAll() as $statement) {
-    $GLOBALS['post-id'] = $statement[0];
-
-    // read upvotes and downvotes 
-    $votes_count = $pdo->query("SELECT * FROM `votes`");
-    foreach ($votes_count->fetchAll() as $vote_count) {
-    $GLOBALS['fk-post-id'] = $vote_count[1];
-    
-}
-}
 
 //save registered user Info
 if (isset($_POST["register-box"])) {

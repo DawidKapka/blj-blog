@@ -1,13 +1,6 @@
 <?php
 $upvotes = 0;
 $downvotes = 0;
-
-echo $GLOBALS['post-id'];
-echo $GLOBALS['fk-post-id'];
-if ($GLOBALS['post-id'] === $GLOBALS['fk-post-id']) {
-    $upvotes++;
-}
-echo $upvotes;
 ?>
 
 <p class="header-text"><img src="../img/create-icon.png" alt="" class="icon"> Create Post:</p>

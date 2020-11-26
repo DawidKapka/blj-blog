@@ -6,15 +6,8 @@
     include("../logic/logic.php");
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-</head>
-<body>
     <?php include("header.php");?>
+<body>
     <div class="container">
         <div class="subnav">
         </div>
@@ -22,7 +15,7 @@
             <div class="content">
                 <div class="main-box">
                     <div class="add-box">
-                        <form action="index.php" method="post">
+                        <form action="home.php" method="post">
                             <?php
                                 if (isset($_SESSION['userid'])) {
                                     include('create-box.php');
@@ -39,13 +32,13 @@
                             <div class="message-box">
                                 <?php
                                 foreach($statements->fetchAll() as $statement) {
-                                    $id = $statement[0];
-                                    $name = $statement[1];
+                                    $GLOBALS['post_id'] = $statement[0];
+                                    $post_name = $statement[1];
                                     $date = $statement[2];
                                     $message = $statement[3];
                                     $url = $statement[4];
                                     include("message-box.php"); 
-                                    
+                                
                                 }
                                 ?>
 

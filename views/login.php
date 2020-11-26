@@ -27,7 +27,7 @@
                                     include('login-box.php');
                                 } else {
                                     echo '<p class="header-text">Login Successful! Redirecting to Main Page... </p>';
-                                    header("Location: index.php");
+                                    header("Location: home.php");
                                 }
                             ?>
 
