@@ -14,7 +14,20 @@
             <a class="nav-text" href="about.php"><p class="nav-border">About</p></a>
             <a class="nav-text" href="index.php"><p class="nav-border">Blog</p></a>
             <a class="nav-text" href="other-blogs.php"><p class="nav-border">Other Blogs</p></a>     
-            <a class="nav-text" href="login.php"><p class="nav-border login-text">Login/Register<img src="../img/login-icon.png" alt="login icon" class="icon"></p></a>             
+        
+            <?php
+                if (isset($_SESSION['userid'])) {
+                    echo '<form action="index.php" method="post">';
+                        echo '<input type="submit" value="Log Out" class="post-button logout-button" name="logout">';
+                    echo '</form>';
+                    if (isset($_POST['logout'])) {
+                        session_destroy();
+                    }
+                } else {
+                    echo '<a class="nav-text" href="login.php"><p class="nav-border login-text">Login/Register<img src="../img/login-icon.png" alt="login icon" class="icon"></p></a>';
+                }
+
+            ?>      
         </nav>
 
 

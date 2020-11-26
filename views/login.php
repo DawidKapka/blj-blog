@@ -25,9 +25,9 @@
                             <p class="header-text">Login</p>
                             
                         
-                            <label for="name" class="name-input">Username:</label>
+                            <label for="name" class="name-input">Username/Email:</label><br>
                             <input type="text" name="name" class="name-input"><br>
-                            <label for="name" class="name-input">Password:</label>
+                            <label for="name" class="name-input">Password:</label><br>
                             <input type="password" name="password" class="name-input"><br>
 
                             <input type="submit" value="Login" class="post-button" name="login-box">
@@ -37,7 +37,7 @@
                             <?php
                                 if(isset($_POST["login-box"])) {
                                     $name = $_POST["name"] ?? '';
-                                    $password = $_POST["password"] ?? '';
+                                    $password = $_POST["password"] ?? '';                             
                                 } 
                             ?>
                         </form>

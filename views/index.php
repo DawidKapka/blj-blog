@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+
     include("../logic/validation.php");
     include("errors.php");
     include("../logic/comment-validation.php");
@@ -24,17 +24,13 @@
                 <div class="main-box">
                     <div class="add-box">
                         <form action="index.php" method="post">
-                            <p class="header-text"><img src="../img/create-icon.png" alt="" class="icon"> Create Post:</p>
-                            <label for="name" class="name-input">Name:</label>
-                            <input type="text" name="name" class="name-input" value="<?= $name?>"><br>
-
-                            <textarea name="blog-input" cols="100" rows="5" class="blog-input" value="<?php?>"><?= $message?></textarea><br>
-                            
-                            <div class="img-box">
-                                <label for="img" class="image-input">Image: </label>
-                                <input type="text" name="img" class="image-input" placeholder="Paste URL here..."><br>
-                            </div>
-                            <input type="submit" value="Send" class="post-button" name="login-box">
+                            <?php
+                                if (isset($_SESSION['userid'])) {
+                                    include('create-box.php');
+                                } else {
+                                    echo '<p class="header-text">Please <a href="login.php" class="login-text">login</a> to create Posts</p>';
+                                }
+                            ?>
                             </div>
                             <?php 
                             if (isset($_POST["login-box"])) {
@@ -49,10 +45,10 @@
                                     $date = $statement[2];
                                     $message = $statement[3];
                                     $url = $statement[4];
-                                    include("message-box.php");
-                                    
+                                    include("message-box.php"); 
                                 }
                                 ?>
+
                             </div>
                         
                         </form>
