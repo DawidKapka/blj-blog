@@ -35,11 +35,16 @@
                 <?php
                     if (isset($_POST['submit-comment-box-' . $GLOBALS['post_id']])) {
                         validateComment($comment_name, $comment);
-                        if (isCommentNameCorrect($comment_name) === true && isCommentCorrect($comment) === true) {
-                            $insert_comment = $pdo->prepare("INSERT INTO `comments` (fk_id_post, created_by, created_at, comment_text) VALUES (SELECT id_post FROM posts WHERE id_post = :id_post, :created_by, :created_at, :comment_text)");
+                        if (isCommentCorrect($comment) === true) {
+                            $insert_comment = $pdo->prepare("INSERT INTO `comments` (fk_id_post, created_by, created_at, comment_text) VALUES ((SELECT id FROM posts WHERE id = :id_post), :created_by, :created_at, :comment_text)");
                             $insert_comment->execute([':id_post' => $GLOBALS['post_id'], ':created_by' => $GLOBALS['name'], ':created_at' => $date, ':comment_text' => $comment]);
 
                         }
+                    }
+                    $load_comments = $pdo->prepare("SELECT * FROM `comments` WHERE fk_id_post = :id_post ORDER BY created_at DESC");
+                    $load_comments->execute([':id_post' => $GLOBALS['post_id']]);
+                    foreach ($load_comments->fetchAll() as $load_comment) {
+                        var_dump($load_comment);
                     }
                 ?>
                 </div>

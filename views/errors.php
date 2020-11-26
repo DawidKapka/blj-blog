@@ -13,12 +13,8 @@ function validateInput($name, $message) {
     } 
 }
 function validateComment($comment_name, $comment) { 
-    if (isCommentNameCorrect($comment_name) === false || isCommentCorrect($comment) === false) { 
+    if (isCommentCorrect($comment) === false) { 
         echo '<div class=error-box><ul>';
-    
-        if (isCommentNameCorrect($comment_name) === false) {
-            echo '<li class="error">Enter a valid Name!</li>';
-        }
         if (isCommentCorrect($comment) === false) {
             echo '<li class="error">The Comment cannot be empty!</li>';
         }
