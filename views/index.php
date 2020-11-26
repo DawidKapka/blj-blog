@@ -1,5 +1,4 @@
 <?php 
-
     include("../logic/validation.php");
     include("errors.php");
     include("../logic/comment-validation.php");
@@ -46,6 +45,7 @@
                                     $message = $statement[3];
                                     $url = $statement[4];
                                     include("message-box.php"); 
+                                    
                                 }
                                 ?>
 

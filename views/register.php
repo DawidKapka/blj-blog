@@ -41,7 +41,7 @@
 
                             <?php
                                 if (isset($_POST["register-box"])) {
-                                    validateRegister($name, $email, $password, $password_repeat);
+                                    validateRegister($name_register, $email, $password, $password_repeat);
                                 }
                             ?>
                         </form>

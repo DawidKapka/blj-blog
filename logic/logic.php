@@ -1,5 +1,5 @@
 <?php
-    if (!isset($_SESSION['userid'])) {
+    if (!isset($_SESSION)) {
         session_start();
     }
 
@@ -15,41 +15,81 @@ $pdo = new PDO('mysql:host=localhost;dbname=blog', $dbuser, $dbpassword, [
 //save post 
 if (isNameCorrect($name) === true && isMessageCorrect($message) === true) {
     $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, created_at, post_message, image_url) VALUES (:username, :post_date, :post_message, :post_image)");
-    $stmt->execute([':username' => $name, ':post_date' => $date, ':post_message' => $message, ':post_image' => $image]);
+    $stmt->execute([':username' => $name[1], ':post_date' => $date, ':post_message' => $message, ':post_image' => $image]);
 }
 
 //load all posts
 $statements = $pdo->query('SELECT * FROM `posts` ORDER BY `created_at` DESC');
+foreach ($statements->fetchAll() as $statement) {
+    $GLOBALS['post-id'] = $statement[0];
+
+    // read upvotes and downvotes 
+    $votes_count = $pdo->query("SELECT * FROM `votes`");
+    foreach ($votes_count->fetchAll() as $vote_count) {
+    $GLOBALS['fk-post-id'] = $vote_count[1];
+    
+}
+}
 
 //save registered user Info
 if (isset($_POST["register-box"])) {
-    if (isUsernameCorrect($name) === true && isEmailCorrect($email) === true && isPasswordCorrect($password) === true && isRepeatedPasswordCorrect($password, $password_repeat) === true) {
+    if (isUsernameCorrect($name_register) === true && isEmailCorrect($email) === true && isPasswordCorrect($password) === true && isRepeatedPasswordCorrect($password, $password_repeat) === true) {
         $password = password_hash($password, PASSWORD_DEFAULT);
         $register = $pdo->prepare("INSERT INTO `users` (username, email, user_password) VALUES (:username, :email, :user_password)");
-        $register->execute([':username' => $name, ':email' => $email, ':user_password' => $password]);
+        $register->execute([':username' => $name_register, ':email' => $email, ':user_password' => $password]);
 
     } 
 }
-
-
 //get user info on login
 if (isset($_POST["login-box"])) {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $credentials = $pdo->prepare("SELECT * FROM `users` WHERE username = :username OR email = :username AND user_password = :user_password");
-        $credentials->execute([':username' => $name, ':user_password' => $password_hash]);
+        $credentials->execute([':username' => $name_register, ':user_password' => $password_hash]);
         $login = false;
         foreach ($credentials->fetchAll() as $credential) {
-            if ($name === $credential[1] && password_verify($password, $credential[3]) === true) {
+            if ($name_register === $credential[1] && password_verify($password, $credential[3]) === true) {
                 $login = true;
-            } elseif ($name === $credential[2] && password_verify($credential[3], $password_hash) === true) {
+            } elseif ($name_register === $credential[2] && password_verify($credential[3], $password_hash) === true) {
                 $login = true;
             }
         }
         if ($login === true) {
             $_SESSION['userid'] = $credential[0];
+
         }
 }
+
+//get username
+if (isset($_SESSION['userid'])) {
+    $username_db = $pdo->prepare("SELECT * FROM `users` WHERE id_user = :id_session");
+    $username_db->execute([':id_session' => $_SESSION['userid']]);
+    foreach ($username_db->fetchAll() as $login_username) {
+        $GLOBALS['name'] = $login_username;
+    }
+}
+
+
+// add upvote
+if (isset($_POST['upvote'])) {
+
+}
+// add downvote
+if (isset($_POST['downvote'])) {
+
+}
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
 <?php //blog links database
 $dbuser2 = 'd041e_listuder';
 $dbpassword2 = '12345_Db!!!';

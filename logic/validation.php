@@ -1,5 +1,5 @@
 <?php
-$name = $_POST["name"] ?? '';
+$name = $GLOBALS['name'][1] ?? '';
 $message = $_POST["blog-input"] ?? '';
 $date = date('d.m.y H:i:s');
 $image = $_POST['img'] ?? '';

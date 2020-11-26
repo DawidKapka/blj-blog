@@ -22,7 +22,7 @@ body {
 }
 .navbar {
     grid-area: nav;
-    box-shadow: 5px 5px 5px black; 
+    box-shadow: 3px 3px 5px black; 
     display: flex;
     flex-basis: auto;
     flex-wrap: wrap;
@@ -158,4 +158,9 @@ body {
     margin-top: 20px;
     width: 200%;
     height: 50%;
+    font-size: 15px;
+    margin-left: 0;
+}
+.account-settings {
+    margin-right: 0;
 }

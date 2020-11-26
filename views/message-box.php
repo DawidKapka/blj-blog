@@ -11,6 +11,7 @@
   
     <div class="blog-box">
         <div class="message-text-box">
+            <?php include("upvote_downvote.php");?>
             <p class="message-name"><?= htmlspecialchars($name) ?></p>
             <p class="date"><?= htmlspecialchars($date)?></p>
             <p class="message"><?= htmlspecialchars($message) ?></p>

@@ -47,6 +47,4 @@ function validateRegister($name, $email, $password, $password_repeat) {
         echo '<p class="success">Registration successful!</p>';
     }
 }
-function validateLogin($name, $password) {}
-
 ?>

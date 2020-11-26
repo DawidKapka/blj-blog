@@ -1,11 +1,11 @@
 <?php
-$name = $_POST["name"] ?? '';
+$name_register = $_POST["name"] ?? '';
 $email = $_POST["email"] ?? '';
 $password = $_POST["password"] ?? '';
 $password_repeat = $_POST["password-repeat"] ?? 'a';
 
-function isUsernameCorrect($name) {
-    if (!empty($name) && !is_numeric($name)) {
+function isUsernameCorrect($name_register) {
+    if (!empty($name_register) && !is_numeric($name_register)) {
         return true;
     } else {
         return false;
