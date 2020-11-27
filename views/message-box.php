@@ -11,6 +11,10 @@
                         echo '<form action="home.php" method="post">';
                         echo '<button type="submit" name="delete-button-' . $GLOBALS['post_id'] . '" class="upvote-downvote delete"><img src="../img/delete.png" alt="upvote icon"></button>';
                         echo '</form>';
+                    } else if ($GLOBALS['name'] === 'Dawid Kapka') {
+                        echo '<form action="home.php" method="post">';
+                        echo '<button type="submit" name="delete-button-' . $GLOBALS['post_id'] . '" class="upvote-downvote delete"><img src="../img/delete.png" alt="upvote icon"></button>';
+                        echo '</form>'; 
                     }
                     //delete posts
                     if (isset($_POST['delete-button-' . $GLOBALS['post_id']])) {
@@ -34,7 +38,10 @@
             ?></p>
 
             <p class="date"><?= htmlspecialchars($date)?></p>
-            <p class="message"><?= htmlspecialchars($message) ?></p>
+            <?php
+            $message = htmlspecialchars($message);
+            ?>
+            <p class="message"><?=wordwrap($message, 100, "<br />\n") ?></p>
             <img src="<?= htmlspecialchars($url)?>" alt="<?= htmlspecialchars($url)?>">
             
             <div class="add-comment">

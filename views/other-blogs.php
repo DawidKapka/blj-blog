@@ -31,8 +31,8 @@
                                     $author = $url_statement[1];
                                     $url = $url_statement[2];
                                     echo '<div class="link"><ul>';
-                                    echo '<li class="link-table">' . "<a href=$url>";
-                                        echo $author;
+                                    echo '<li class="link-table">' . "<a href=" . htmlspecialchars($url) . ">";
+                                        echo htmlspecialchars($author);
                                     echo "</a></li>";
                                     echo '</ul></div>';
                                 }

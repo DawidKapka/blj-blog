@@ -248,3 +248,6 @@ body {
     transition: 50ms;
     background-color: #999999;
 }
+.acc-info {
+    margin: 0;
+}

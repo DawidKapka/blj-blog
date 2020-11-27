@@ -1,6 +1,6 @@
 <?php
 $name = $GLOBALS['name'][1] ?? '';
-$message = $_POST["blog-input"] ?? '';
+$message = $_POST["blog-input"]?? '';
 $date = date('y.m.d H:i:s');
 $GLOBALS['date'] = $date;
 $image = $_POST['img'] ?? '';
