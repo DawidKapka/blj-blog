@@ -4,10 +4,10 @@
     }
 
 //posts & comments database
-$dbuser = 'root';
-$dbpassword = '';
+$dbuser = 'd041e_dakapka';
+$dbpassword = '12345_Db!!!';
 
-$pdo = new PDO('mysql:host=localhost;dbname=blog', $dbuser, $dbpassword, [
+$pdo = new PDO('mysql:host=mysql2.webland.ch;dbname=d041e_dakapka', $dbuser, $dbpassword, [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 ]);

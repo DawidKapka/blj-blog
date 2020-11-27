@@ -16,7 +16,7 @@
             <?php
                 if (isset($_SESSION['userid'])) {
                     $user_name = $GLOBALS['name'][1];
-                    echo '<a class="nav-text account-settings" href="account-settings.php"><p class="nav-border"><img class="user-img" src="../img/user-icon.png" alt="user-icon"><br>' . $user_name . '</p></a>';
+                    echo '<a class="nav-text account-settings" href="account-settings.php"><p class="nav-border"><img class="user-img" src="../img/user-icon.png" alt="user-icon"><br>' . htmlspecialchars($user_name) . '</p></a>';
                     echo '<form action="home.php" method="post">';
                         echo '<input type="submit" value="Logout" class="post-button logout-button" name="logout">';
                     echo '</form>';

@@ -222,3 +222,10 @@ body {
 .own_post {
     color: red;
 }
+.admin {
+    margin-left: 10px;
+}
+.admin_post {
+    color: red;
+    margin-top: 0px;
+}

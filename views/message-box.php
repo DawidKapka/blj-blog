@@ -3,6 +3,7 @@
         <div class="message-text-box" id="<?= $GLOBALS['post_id']?>">
             <?php 
                 $own_post = '';
+                $admin_post = '';
                 if (isset($_SESSION['userid'])) {
                     include("upvote_downvote.php");
                     if ($GLOBALS['name'] === $post_name) {
@@ -18,9 +19,20 @@
                         header('Location: home.php');
                     }
                 }
+                if ($post_name === 'Dawid Kapka') {
+                    $admin_post = 'admin_post';
+                }
                 
             ?>
-            <p class="message-name <?= $own_post?>"><?= htmlspecialchars($post_name) ?></p>
+
+            <p class="message-name <?= $own_post?> <?= $admin_post?>">
+            <?php 
+            echo htmlspecialchars($post_name);
+            if($post_name === 'Dawid Kapka') {
+                    echo '<img class="admin" src="../img/admin.png" alt="admin icon">';
+                }
+            ?></p>
+
             <p class="date"><?= htmlspecialchars($date)?></p>
             <p class="message"><?= htmlspecialchars($message) ?></p>
             <img src="<?= htmlspecialchars($url)?>" alt="<?= htmlspecialchars($url)?>">

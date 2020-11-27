@@ -41,10 +41,12 @@
         if (isset($_POST['upvote-' . $GLOBALS['post_id']])) { //add upvote
             $insert_upvote = $pdo->prepare("INSERT INTO `votes` (fk_id_post, fk_id_user, up_down) VALUES ((SELECT id FROM posts WHERE id = :id_post), (SELECT id_user FROM users WHERE id_user = :id_user), 1)");
             $insert_upvote->execute([':id_post' => $GLOBALS['post_id'], ':id_user' => $_SESSION['userid']]);
+            header("Location: home.php");
         }
         if (isset($_POST['downvote-' . $GLOBALS['post_id']])) { //add downvote
             $insert_upvote = $pdo->prepare("INSERT INTO `votes` (fk_id_post, fk_id_user, up_down) VALUES ((SELECT id FROM posts WHERE id = :id_post), (SELECT id_user FROM users WHERE id_user = :id_user), 0)");
             $insert_upvote->execute([':id_post' => $GLOBALS['post_id'], ':id_user' => $_SESSION['userid']]);
+            header("Location: home.php");
         }
     }
     $upvotes = 0;
