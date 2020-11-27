@@ -78,7 +78,7 @@ body {
 }
 .post-button {
     padding: 5px 10px;
-    box-shadow: #1B3659;
+    box-shadow: 1px 1px 2px #999999;
 }
 .message {
     color: black;
@@ -139,7 +139,19 @@ body {
 }
 .link {
     color: black;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 22vw;
+    border: 2px solid #444444;
+    background: #444444;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.link:hover {
+    transition: 50ms;
+    background-color: #666666;
+    border: 2px solid #666666;
 }
 .nav-header {
     margin: auto 0;
@@ -228,4 +240,11 @@ body {
 .admin_post {
     color: red;
     margin-top: 0px;
+}
+.link-table {
+    text-decoration: none;
+}
+.post-button:hover {
+    transition: 50ms;
+    background-color: #999999;
 }

@@ -25,14 +25,13 @@
             <div class="content">
                 <div class="main-box">
                     <div class="add-box">
-                        <p class="header-text">Other Blogs: </p> 
                         <div class="links">
                             <?php
                                 foreach($sqlQuerry->fetchAll() as $url_statement) {
                                     $author = $url_statement[1];
                                     $url = $url_statement[2];
                                     echo '<div class="link"><ul>';
-                                    echo "<li><a href=$url>";
+                                    echo '<li class="link-table">' . "<a href=$url>";
                                         echo $author;
                                     echo "</a></li>";
                                     echo '</ul></div>';
