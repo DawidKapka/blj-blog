@@ -7,6 +7,9 @@
 
 ?>
     <?php include("header.php");?>
+<head>
+    <title>Home</title>
+</head>
 <body>
     <div class="container">
         <div class="subnav">
@@ -20,7 +23,7 @@
                                 if (isset($_SESSION['userid'])) {
                                     include('create-box.php');
                                 } else {
-                                    echo '<p class="header-text">Please <a href="login.php" class="login-text">login</a> to create Posts</p>';
+                                    echo '<p class="header-text">Please <a href="login.php" class="login-text">login</a> to create, comment and upvote Posts</p>';
                                 }
                             ?>
                             </div>
@@ -50,6 +53,8 @@
             </div>
 
         </main>
+ 
     </div>
+
 </body>
 </html>

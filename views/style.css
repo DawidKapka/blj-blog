@@ -11,10 +11,11 @@ body {
 }
 .container {
     width: auto;
+    height: 100vh;
     margin: 0;
     display: grid;
     grid-template-columns: 200px auto 200px;
-    grid-template-rows: 120px auto 60px;
+    grid-template-rows: 120px auto 200px;
     grid-template-areas:
       "nav   nav      nav"
       "subnav  content  content"
@@ -163,4 +164,61 @@ body {
 }
 .delete {
     margin-top: 5px;
+}
+.user-img {
+    padding-left: 30px;
+}
+.footer {
+    grid-area: footer;
+    background-color: black;
+    height: auto;
+    border-radius: 10px;
+    display: grid;
+}
+.copyright {
+    margin-left: 45vw;
+}
+.mini-nav-text {
+    margin-top: 0;
+    margin-left: 48vw;
+
+}
+.comment-box {
+    border: 2px solid #444444;
+    color: black;
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+.comment-name {
+    font-size: 14px;
+    margin-left: 10px;
+    color: black;
+}
+.comment-date {
+    font-size: 10px;
+    font-style: italic;
+    margin-left: 10px;
+    color: #444444;
+}
+.comment-message {
+    font-size: 12px;
+    margin-left: 25px;
+    color: black;
+}
+.comment-button {
+    margin-left: 40px;
+}
+.upvote-amount, .downvote-amount {
+    margin: 0;
+    font-size: 12px;
+}
+.upvote-amount {
+    color: green;
+}
+.downvote-amount {
+    color: red;
+}
+.own_post {
+    color: red;
 }

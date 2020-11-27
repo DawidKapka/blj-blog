@@ -1,7 +1,8 @@
 <?php
 $name = $GLOBALS['name'][1] ?? '';
 $message = $_POST["blog-input"] ?? '';
-$date = date('d.m.y H:i:s');
+$date = date('y.m.d H:i:s');
+$GLOBALS['date'] = $date;
 $image = $_POST['img'] ?? '';
 
 function isNameCorrect($name) {

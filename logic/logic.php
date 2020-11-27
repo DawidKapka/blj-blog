@@ -14,8 +14,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=blog', $dbuser, $dbpassword, [
 
 //save post 
 if (isNameCorrect($name) === true && isMessageCorrect($message) === true) {
-    $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, created_at, post_message, image_url) VALUES (:username, :post_date, :post_message, :post_image)");
-    $stmt->execute([':username' => $name[1], ':post_date' => $date, ':post_message' => $message, ':post_image' => $image]);
+    $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, post_message, image_url) VALUES (:username, :post_message, :post_image)");
+    $stmt->execute([':username' => $name[1], ':post_message' => $message, ':post_image' => $image]);
 }
 
 //load all posts
@@ -57,18 +57,6 @@ if (isset($_SESSION['userid'])) {
         $GLOBALS['name'] = $login_username;
     }
 }
-
-
-// add upvote
-if (isset($_POST['upvote'])) {
-
-}
-// add downvote
-if (isset($_POST['downvote'])) {
-
-}
-
-
 ?>
 
 

@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Settings</title>
 </head>
 <body>
 <?php include("header.php");?>
@@ -21,7 +21,10 @@
             <div class="content">
                 <div class="main-box">
                     <div class="add-box">
-                    <p class="header-text">Account Settings  **in progress**</p>
+                    <p class="header-text">Account Information</p><br>
+                    <img src="../img/user-icon-big.png" alt="user-icon"><br>
+                    <p class="acc-info">Username: <?= $GLOBALS['name'][1];?></p><br>
+                    <p class="acc-info">Email: <?= $GLOBALS['name'][2];?></p>
                     </div>
                 </div>
             </div>
