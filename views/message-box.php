@@ -33,7 +33,7 @@
             <?php 
             echo htmlspecialchars($post_name);
             if($post_name === 'Dawid Kapka') {
-                    echo '<img class="admin" src="../img/admin.png" alt="admin icon">';
+                    echo '<img class="admin" title="Administrator" src="../img/admin.png" alt="admin icon">';
                 }
             ?></p>
 

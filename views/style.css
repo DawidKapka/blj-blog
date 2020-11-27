@@ -14,7 +14,7 @@ body {
     height: 100vh;
     margin: 0;
     display: grid;
-    grid-template-columns: 200px auto 200px;
+    grid-template-columns: 15vw 70vw 15vw;
     grid-template-rows: 120px auto 200px;
     grid-template-areas:
       "nav   nav      nav"
@@ -34,6 +34,10 @@ body {
     position: sticky;
     top: 0;
 
+}
+.nav-part {
+    display: flex;
+    justify-content: space-around;;
 }
 .content {
     background-color: #444444;
@@ -73,6 +77,9 @@ body {
     grid-area: text;
     color: black;
 }
+.blog-input {
+    width: calc(100vw - 55vw);
+}
 .name-input, .image-input {
     color: black;
 }
@@ -80,9 +87,13 @@ body {
     padding: 5px 10px;
     box-shadow: 1px 1px 2px #999999;
 }
+.logout-form {
+    margin-left: 40px;
+}
 .message {
     color: black;
     padding-left: 20px;
+    overflow-wrap: break-word;
 }
 .message-name {
     color: black;
@@ -104,7 +115,7 @@ body {
 }
 .message-text-box {
     padding: 10px;
-    border-bottom: 2px solid #444444;
+    width: calc(100vw - 40vw);
     
 }
 .date {
@@ -201,6 +212,8 @@ body {
     border-radius: 10px;
     margin-left: 40px;
     margin-bottom: 5px;
+    margin-right: 0;
+    width: calc(100vw - 55vw);
 }
 .comment-name {
     font-size: 14px;
@@ -237,9 +250,14 @@ body {
 .admin {
     margin-left: 10px;
 }
-.admin_post {
+.admin_post, .admin_post_comment {
     color: red;
     margin-top: 0px;
+}
+.admin_post_comment {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
 }
 .link-table {
     text-decoration: none;
@@ -250,4 +268,60 @@ body {
 }
 .acc-info {
     margin: 0;
+}
+.add-form {
+    width: calc(100vw - 40vw);
+}
+@media (max-width: 1024px) {
+    .logout-button {
+        display: none;
+    }
+    .link {
+        margin-left: 10vw;
+    }
+    .message-name, .date, .message, .add-form {
+        width: calc(100vw - 55vw);
+        margin-left: 0;
+    }
+    .comment-input, .add-comment {
+        width: calc(100vw - 55vw);
+        padding: 0;
+    }
+    .comment-box, .post-button {
+        margin-left: 0;
+    }
+}
+@media (max-width: 480px) {
+    .comment-box {
+        margin-left: 0;
+    }
+    .message-name, .date, .message, .add-form {
+        width: calc(100vw - 65vw);
+        margin-left: 0;
+    }
+    .comment-input, .add-comment {
+        width: calc(100vw - 65vw);
+        padding: 0;
+    }
+    .comment-button {
+        margin-left: 0;
+    }
+    .nav-header {
+        margin-top: 20px;
+    }
+    .nav-text {
+        margin-bottom: 0;
+    }
+    .user-img {
+        padding-left: 0;
+    }
+    .logout-form {
+        margin-left: 0;
+    }
+    .logout-button {
+        display: none;
+    }
+    .link {
+        margin-left: 10vw;
+    }
 }

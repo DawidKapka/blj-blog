@@ -18,7 +18,7 @@
             <div class="content">
                 <div class="main-box">
                     <div class="add-box">
-                        <form action="home.php" method="post">
+                        <form action="home.php" method="post" class="add-form">
                             <?php
                                 if (isset($_SESSION['userid'])) {
                                     include('create-box.php');
