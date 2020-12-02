@@ -43,4 +43,24 @@ function validateRegister($name, $email, $password, $password_repeat) {
         echo '<p class="success">Registration successful!</p>';
     }
 }
+function validateName($name) {
+    if (isNameCorrect($name) === false) { 
+        echo '<div class=error-box><ul>';
+    
+        if (isNameCorrect($name) === false) {
+            echo '<li class="error">Enter a valid Name!</li>';
+        }
+        echo '</ul></div>';
+    }
+}
+function validateEmail($email) {
+    if (isEmailCorrect($email) === false) { 
+        echo '<div class=error-box><ul>';
+    
+        if (isEmailCorrect($email) === false) {
+            echo '<li class="error">Enter a valid Email!</li>';
+        }
+        echo '</ul></div>';
+    }
+}
 ?>

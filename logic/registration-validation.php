@@ -12,7 +12,7 @@ function isUsernameCorrect($name_register) {
     }
 }
 function isEmailCorrect($email) {
-    if (!empty($email)) {
+    if (!empty($email) && strpos($email, '@')) {
         return true;
     } else {
         return false;

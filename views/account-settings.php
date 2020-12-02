@@ -25,25 +25,43 @@
                         <p class="header-text">Account Information</p><br>
                         <img src="../img/user-icon-big.png" alt="user-icon"><br>
                         <?php
-                            if (!isset($_POST['change-username'])) {
+                            if (!isset($_POST['change-username']) && !isset($_POST['change-email'])) {
                                 echo '<form action="home.php" method="post">';
                                 echo '<p class="acc-info">Username:' . $GLOBALS['name'][1] . '</p>';
                                 echo '<input type="submit" value="Change Username" class="post-button" name="change-username">';
                                 echo '<p class="acc-info">Email: ' . $GLOBALS['name'][2] . '</p>';
-                                echo '<input type="submit" value="Change Email" class="post-button" name="register-box">';
+                                echo '<input type="submit" value="Change Email" class="post-button" name="change-email">';
                                 echo '</form>';
-                            } else {
+                            } else if (isset($_POST['change-username'])) {
                                 echo '<form action="home.php" method="post">';
                                 echo '<p class="acc-info">New Username: ';
-                                echo '<textarea cols="10" rows="1" name="username-changed" class="new-name-input"></textarea>';
+                                echo '<textarea cols="25" rows="1" name="username-changed" class="new-name-input"></textarea>';
                                 echo '</p>';
                                 echo '<input type="submit" value="Save" class="post-button" name="save-username">';
                                 echo '</form>';
+                            } else {
+                                echo '<form action="home.php" method="post">';
+                                echo '<p class="acc-info">New Email: ';
+                                echo '<textarea cols="25" rows="1" name="email-changed" class="new-name-input"></textarea>';
+                                echo '</p>';
+                                echo '<input type="submit" value="Save" class="post-button" name="save-email">';
+                                echo '</form>';
                             }
                             if (isset($_POST['save-username'])) {
-                                $change_username = $pdo->prepare("UPDATE users SET username = :new_username WHERE id_user = :id_user");
-                                $change_username->execute([':id_user' => $_SESSION['userid'], ':new_username' => $_POST['username-changed']]);
-                                header("Location: account-settings.php");
+                                validateName($_POST['username-changed']);
+                                if (isNameCorrect($_POST['username-changed']) === true) {
+                                    $change_username = $pdo->prepare("UPDATE users SET username = :new_username WHERE id_user = :id_user");
+                                    $change_username->execute([':id_user' => $_SESSION['userid'], ':new_username' => $_POST['username-changed']]);
+                                    header("Location: account-settings.php");
+                                }
+                            }
+                            if (isset($_POST['save-email'])) {
+                                validateEmail($_POST['email-changed']);
+                                if (isEmailCorrect($_POST['email-changed']) === true) {
+                                    $change_username = $pdo->prepare("UPDATE users SET email = :new_email WHERE id_user = :id_user");
+                                    $change_username->execute([':id_user' => $_SESSION['userid'], ':new_email' => $_POST['email-changed']]);
+                                    header("Location: account-settings.php");
+                                }
                             }
                         ?>
 
