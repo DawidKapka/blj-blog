@@ -9,7 +9,10 @@
                     if ($GLOBALS['name'] === $post_name) {
                         $own_post = 'own_post"';
                         echo '<form action="home.php" method="post">';
-                        echo '<button type="submit" name="delete-button-' . $GLOBALS['post_id'] . '" class="upvote-downvote delete"><img src="../img/delete.png" alt="upvote icon"></button>';
+                        echo '<button type="submit" name="delete-button-' . $GLOBALS['post_id'] . '" class="upvote-downvote delete"><img src="../img/delete.png" alt="delete icon"></button>';
+                        echo '</form>';
+                        echo '<form action="home.php" method="post">';
+                        echo '<button type="submit" name="edit-button-' . $GLOBALS['post_id'] . '" class="upvote-downvote delete"><img src="../img/edit.png" alt="edit icon"></button>';
                         echo '</form>';
                     } else if ($GLOBALS['name'] === 'Dawid Kapka') {
                         echo '<form action="home.php" method="post">';
@@ -40,8 +43,24 @@
             <p class="date"><?= htmlspecialchars($date)?></p>
             <?php
             $message = htmlspecialchars($message);
+
+            if (!isset($_POST['edit-button-' . $GLOBALS['post_id']])) {
+                echo '<p class="message">' . $message . '</p>';
+            }
+            else { //edit post
+                echo '<form action="home.php" method="post">';
+                echo '<textarea name="new-input" cols="100" rows="5" class="blog-input">' . $message . '</textarea><br>';
+                echo '<button type="submit" name="save-button-' . $GLOBALS['post_id'] . '" class="post-button">Save</button>';
+                echo '</form>'; 
+            }
+            if (isset($_POST['save-button-' . $GLOBALS['post_id']])) { 
+                $change_post = $pdo->prepare("UPDATE posts SET post_message = :new_message WHERE id = :id_post");
+                $change_post->execute([':id_post' => $GLOBALS['post_id'], ':new_message' => $_POST['new-input']]);
+                header("Location: home.php");
+            }
             ?>
-            <p class="message"><?=wordwrap($message, 100, "<br />\n") ?></p>
+
+
             <img src="<?= htmlspecialchars($url)?>" alt="<?= htmlspecialchars($url)?>">
             
             <div class="add-comment">

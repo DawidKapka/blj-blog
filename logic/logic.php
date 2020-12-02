@@ -27,7 +27,6 @@ if (isset($_POST["register-box"])) {
         $password = password_hash($password, PASSWORD_DEFAULT);
         $register = $pdo->prepare("INSERT INTO `users` (username, email, user_password) VALUES (:username, :email, :user_password)");
         $register->execute([':username' => $name_register, ':email' => $email, ':user_password' => $password]);
-
     } 
 }
 //get user info on login
