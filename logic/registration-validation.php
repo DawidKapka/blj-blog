@@ -5,7 +5,7 @@ $password = $_POST["password"] ?? '';
 $password_repeat = $_POST["password-repeat"] ?? 'a';
 
 function isUsernameCorrect($name_register) {
-    if (!empty($name_register) && !is_numeric($name_register)) {
+    if (!empty($name_register) && !is_numeric($name_register) && $name_register !== 'Dawid Kapka') {
         return true;
     } else {
         return false;

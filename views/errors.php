@@ -46,20 +46,21 @@ function validateRegister($name, $email, $password, $password_repeat) {
 function validateName($name) {
     if (isNameCorrect($name) === false) { 
         echo '<div class=error-box><ul>';
-    
-        if (isNameCorrect($name) === false) {
             echo '<li class="error">Enter a valid Name!</li>';
-        }
         echo '</ul></div>';
     }
 }
 function validateEmail($email) {
     if (isEmailCorrect($email) === false) { 
         echo '<div class=error-box><ul>';
-    
-        if (isEmailCorrect($email) === false) {
             echo '<li class="error">Enter a valid Email!</li>';
-        }
+        echo '</ul></div>';
+    }
+}
+function validatePassword($password) {
+    if (isPasswordCorrect($password) === false) {
+        echo '<div class=error-box><ul>';
+            echo '<li class="error">Password is too short! (min. 8 characters)</li>';
         echo '</ul></div>';
     }
 }

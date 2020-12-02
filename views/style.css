@@ -49,9 +49,7 @@ body {
     background-color:  #26140D;
     border: 5px solid #26140D;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px #26140D;
-    
-    
+    box-shadow: 2px 2px 5px #26140D;   
 }
 .main {
     padding-top: 20px;
@@ -67,8 +65,6 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
       "text   image";
-
-
 }
 .blog-input, .name-input, .post-button, .image-input, .new-name-input{
     margin: 10px;
@@ -94,6 +90,7 @@ body {
     color: black;
     padding-left: 20px;
     overflow-wrap: break-word;
+    overflow: hidden;
 }
 .message-name {
     color: black;
@@ -279,6 +276,10 @@ body {
 .nav-border {
     display: inline-flexbox;
     text-align: center;
+}
+.post-image {
+    object-fit: contain;
+    max-width: 100%;
 }
 @media (max-width: 1024px) {
     .logout-button {

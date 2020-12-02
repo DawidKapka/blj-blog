@@ -61,7 +61,7 @@
             ?>
 
 
-            <img src="<?= htmlspecialchars($url)?>" alt="<?= htmlspecialchars($url)?>">
+            <img class="post-image" src="<?= htmlspecialchars($url)?>" alt="<?= htmlspecialchars($url)?>">
             
             <div class="add-comment">
                 <form action="home.php" method="post">
@@ -78,7 +78,6 @@
                         if (isCommentCorrect($comment) === true) { //add comment
                             $insert_comment = $pdo->prepare("INSERT INTO `comments` (fk_id_post, created_by, comment_text) VALUES ((SELECT id FROM posts WHERE id = :id_post), :created_by, :comment_text)");
                             $insert_comment->execute([':id_post' => $GLOBALS['post_id'], ':created_by' => $GLOBALS['name'], ':comment_text' => $comment]);
-
                         }
                     } else if (isset($_POST['submit-comment-box-' . $GLOBALS['post_id']]) && !isset($_SESSION['userid'])){
                         echo '<div class=error-box><ul>';
