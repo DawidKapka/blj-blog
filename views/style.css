@@ -70,7 +70,7 @@ body {
 
 
 }
-.blog-input, .name-input, .post-button, .image-input {
+.blog-input, .name-input, .post-button, .image-input, .new-name-input{
     margin: 10px;
     border: none;
     border-radius: 10px;
@@ -188,9 +188,6 @@ body {
 .delete {
     margin-top: 5px;
 }
-.user-img {
-    padding-left: 30px;
-}
 .footer {
     grid-area: footer;
     background-color: black;
@@ -279,6 +276,10 @@ body {
 .delete-comment {
     margin-left: 10px;
 }
+.nav-border {
+    display: inline-flexbox;
+    text-align: center;
+}
 @media (max-width: 1024px) {
     .logout-button {
         display: none;
@@ -318,9 +319,6 @@ body {
     }
     .nav-text {
         margin-bottom: 0;
-    }
-    .user-img {
-        padding-left: 0;
     }
     .logout-form {
         margin-left: 0;
