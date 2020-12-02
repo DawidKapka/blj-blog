@@ -48,7 +48,19 @@
             $insert_upvote->execute([':id_post' => $GLOBALS['post_id'], ':id_user' => $_SESSION['userid']]);
             header("Location: home.php");
         }
+    } else {
+        if (isset($_POST['upvote-' . $GLOBALS['post_id']])) { //add upvote
+            $insert_upvote = $pdo->prepare("DELETE FROM `votes` WHERE fk_id_post = :id_post AND fk_id_user = :id_user AND up_down = 1");
+            $insert_upvote->execute([':id_post' => $GLOBALS['post_id'], ':id_user' => $_SESSION['userid']]);
+            header("Location: home.php");
+        }
+        if (isset($_POST['downvote-' . $GLOBALS['post_id']])) { //add downvote
+            $insert_upvote = $pdo->prepare("DELETE FROM `votes` WHERE fk_id_post = :id_post AND fk_id_user = :id_user AND up_down = 0");
+            $insert_upvote->execute([':id_post' => $GLOBALS['post_id'], ':id_user' => $_SESSION['userid']]);
+            header("Location: home.php");
+        }
     }
+
     $upvotes = 0;
     $downvotes = 0;
 ?>
