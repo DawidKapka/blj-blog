@@ -29,8 +29,7 @@
                         
                         echo '<a class="nav-text" href="login.php"><p class="nav-border login-text"><img src="../img/login-icon.png" class="user-img" alt="login icon" class="icon"><br>Login/Register</p></a>';
                     }
-
-                ?>      
+                ?>   
             </div>
             
         </nav>

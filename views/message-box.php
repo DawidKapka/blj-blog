@@ -56,7 +56,7 @@
                 <?php
                     if (isset($_POST['submit-comment-box-' . $GLOBALS['post_id']]) && isset($_SESSION['userid'])) {
                         validateComment($comment_name, $comment);
-                        if (isCommentCorrect($comment) === true) {
+                        if (isCommentCorrect($comment) === true) { //add comment
                             $insert_comment = $pdo->prepare("INSERT INTO `comments` (fk_id_post, created_by, comment_text) VALUES ((SELECT id FROM posts WHERE id = :id_post), :created_by, :comment_text)");
                             $insert_comment->execute([':id_post' => $GLOBALS['post_id'], ':created_by' => $GLOBALS['name'], ':comment_text' => $comment]);
 
@@ -67,12 +67,14 @@
                         echo '</ul></div>';
                     }
                     
+                    //load comments
                     $load_comments = $pdo->prepare("SELECT * FROM `comments` WHERE fk_id_post = :id_post ORDER BY created_at DESC");
                     $load_comments->execute([':id_post' => $GLOBALS['post_id']]);
                     foreach ($load_comments->fetchAll() as $load_comment) {
                         $commentname = $load_comment[2];
                         $commentdate = $load_comment[3];
-                        $commentmessage = $load_comment[4];                        
+                        $commentmessage = $load_comment[4]; 
+                        $commentid = $load_comment[0];                       
                         include("comment-box.php");
                         
                     }
